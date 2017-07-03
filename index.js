@@ -5,7 +5,7 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/quote', function (request, response) {
-    var randomQuoteId = Math.floor(Math.random() * quotes.length) + 1;
+    var randomQuoteId = Math.floor((Math.random() * quotes.length) + 1);
     response.json({
         quote: quotes.find(function (elem) {
             return elem.quoteInex === randomQuoteId;
